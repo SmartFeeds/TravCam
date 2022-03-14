@@ -107,6 +107,10 @@ These methods should be called to free camera listeners and background threads w
    TravCam.stopVideoRecording();     // Stops video recording
    TravCam.isVideoRecordingRunning() // Returns Boolean 
    ```
+6. Update image capture sound
+   ```
+   TravCam.assignImageCaptureSound(R.raw.sound_file);
+   ```
    
 ## Callbacks & Useful methods:
 ```
