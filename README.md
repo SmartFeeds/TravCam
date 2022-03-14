@@ -73,6 +73,10 @@ Step 2. Add the dependency:
 * Second you must have a `TextureView` in your XML layout file to be used by `TravCam`
 
 
+## Important calls
+Use activity's lifecycle methods to call `TravCam.onResume();` and `TravCam.onPause();`.
+These methods should be called to free camera listeners and background threads when activity is paused, and to refresh the preview when resumed.
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 
