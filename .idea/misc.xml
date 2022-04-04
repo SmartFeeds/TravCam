@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/TravCam/app/src/main/res/drawable/design_camera_prgress_background.xml" value="0.1385" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TravCam/app/src/main/res/drawable/design_camera_progress_drawable.xml" value="0.1385" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TravCam/app/src/main/res/drawable/icon_share_story_btn_capture.xml" value="0.1385" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TravCam/app/src/main/res/layout/activity_camera.xml" value="0.209375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TravCam/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TravCam/app/src/main/res/layout/dialog_permission.xml" value="0.209375" />
         <entry key="..\:/Users/user/Desktop/Learning/Android/TravCam/app/src/main/res/layout/activity_main.xml" value="0.1953125" />
       </map>
     </option>

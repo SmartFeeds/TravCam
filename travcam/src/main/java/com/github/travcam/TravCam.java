@@ -27,12 +27,14 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.OrientationEventListener;
 import android.view.Surface;
 import android.view.TextureView;
+import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import java.io.File;
@@ -248,6 +250,7 @@ public class TravCam {
                 try{
                     mPreviewSize = new Size(width, height);
                     configureTransform(width, height);
+                    configureTextureViewAspectRatio(textureView);
                     initCamera(width, height);
                 }catch (CameraAccessException e){
                     Log.d(TAG, "openCamera exception: "+e.getMessage());
@@ -270,6 +273,34 @@ public class TravCam {
 
             }
         });
+    }
+
+    /**
+     * Generating best suitable height for TextureView using screen's width
+     * This is done using a fixed aspect ratio decimal number
+     * Using the screen width, we're generating a height value of the
+     * screen's width and the fixed aspect ratio
+     * Formula: height = width / ratio
+     *
+     * For this method to work, TextureView must have width & height as wrap_content
+     * And to align to parent's center to have it centered in screen after
+     * adjusting its layout params
+     *
+     * @param textureView  TextureView used to display Camera
+     */
+    private static void configureTextureViewAspectRatio(@NonNull TextureView textureView){
+        final double aspectRatio = 0.533596837944664;
+
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        final int width = metrics.widthPixels;
+
+        // Generating best height for texture view
+        int bestHeight = (int) (width / aspectRatio);
+
+        // Change TextureView height
+        ViewGroup.LayoutParams params = textureView.getLayoutParams();
+        params.height = bestHeight;
+        textureView.setLayoutParams(params);
     }
 
     /**

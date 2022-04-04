@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/share_story_activity_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CameraActivity"
+    android:background="@color/black_light">
+
+    <RelativeLayout
+        android:id="@+id/share_story_activity_main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextureView
+            android:id="@+id/share_story_activity_texture_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/share_story_activity_btn_capture"
+            style="@style/Button.NoBackground.IconOnly"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            app:icon="@drawable/icon_share_story_btn_capture" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/share_story_activity_capture_progress"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/design_camera_progress_drawable"
+            android:background="@drawable/design_camera_prgress_background"
+            android:layout_marginBottom="25dp"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/share_story_activity_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
